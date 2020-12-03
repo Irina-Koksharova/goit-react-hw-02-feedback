@@ -10,8 +10,8 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
         <li className={s.statisticsItem}>Bad: {bad}</li>
       </ul>
 
-      <p>Total: {total}</p>
-      <p>Positive feedback: {positivePercentage}</p>
+      <p className={s.total}>Total: {total}</p>
+      <p className={s.positive}>Positive feedback: {positivePercentage}</p>
     </>
   );
 }

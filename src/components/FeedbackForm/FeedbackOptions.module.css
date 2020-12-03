@@ -6,13 +6,20 @@
   margin-right: 10px;
 }
 
-.statisticsItem:not(:last-child) {
-  margin-bottom: 10px;
-}
-
 .button {
   margin: 0;
   padding: 0;
-  min-width: 80px;
-  min-height: 30px;
+  min-width: 100px;
+  min-height: 40px;
+  color: rgb(75, 73, 73);
+  font-weight: 500;
+  border: 2px solid rgb(77, 74, 74);
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 0 3px rgba(147, 150, 147, 0.4);
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(1.02);
 }

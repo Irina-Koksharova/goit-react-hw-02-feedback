@@ -4,7 +4,8 @@ import s from './Section.module.css';
 function Section({ title, children }) {
   return (
     <section className={s.section}>
-      {title} {children}
+      <p className={s.title}> {title}</p>
+      {children}
     </section>
   );
 }

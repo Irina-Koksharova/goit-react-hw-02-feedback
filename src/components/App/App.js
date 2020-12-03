@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Container from '../Container/Container';
-import Statistics from '../../components/Statistics/Statistics';
 import Section from '../../components/Section/Section';
 import FeedbackOptions from '../../components/FeedbackForm/FeedbackOptions';
 import Notification from '../../components/Notification/Notification';
+import Statistics from '../../components/Statistics/Statistics';
 
 class App extends Component {
   state = {
@@ -13,9 +13,15 @@ class App extends Component {
   };
 
   handleIncrement = e => {
+    const targetButton = e.target;
+    targetButton.style.backgroundColor = 'rgb(251, 152, 152)';
+    setTimeout(() => {
+      targetButton.style.backgroundColor = 'rgb(239, 239, 239)';
+    }, 100);
+
     this.setState(prevState => {
       for (const key in this.state) {
-        if (key === e.target.textContent.toLowerCase()) {
+        if (key === targetButton.textContent.toLowerCase()) {
           return {
             [key]: prevState[key] + 1,
           };
@@ -25,7 +31,10 @@ class App extends Component {
   };
 
   countTotalFeedback() {
-    return Object.values(this.state).reduce((acc, value) => acc + value, 0);
+    return Object.values(this.state).reduce(
+      (total, feedback) => total + feedback,
+      0,
+    );
   }
 
   countPositiveFeedbackPercentage() {
