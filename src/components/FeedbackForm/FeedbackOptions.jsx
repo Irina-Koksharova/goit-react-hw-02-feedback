@@ -3,34 +3,20 @@ import s from './FeedbackOptions.module.css';
 
 function FeedbackForm({ options, onLeaveFeedback }) {
   return (
-    <>
-      <ul className={s.buttonList}>
-        <li className={s.buttonItem}>
+    <ul className={s.buttonList}>
+      {options.map(option => (
+        <li key={option} className={s.buttonItem}>
           <button className={s.button} type="button" onClick={onLeaveFeedback}>
-            Good
+            {option}
           </button>
         </li>
-        <li className={s.buttonItem}>
-          <button className={s.button} type="button" onClick={onLeaveFeedback}>
-            Neutral
-          </button>
-        </li>
-        <li className={s.buttonItem}>
-          <button className={s.button} type="button" onClick={onLeaveFeedback}>
-            Bad
-          </button>
-        </li>
-      </ul>
-    </>
+      ))}
+    </ul>
   );
 }
 
 FeedbackForm.propTypes = {
-  options: PropTypes.shape({
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  }),
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
 

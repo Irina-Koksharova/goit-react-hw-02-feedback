@@ -1,10 +1,8 @@
-.statisticsItem:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.total,
-.positive {
-  margin: 10px 0 0;
+.statisticsItem {
   font-size: 18px;
   font-weight: 500;
+}
+
+.statisticsItem:not(:last-child) {
+  margin-bottom: 10px;
 }

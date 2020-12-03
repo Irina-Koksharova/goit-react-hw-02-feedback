@@ -13,7 +13,7 @@ class App extends Component {
   };
 
   handleIncrement = e => {
-    const targetButton = e.target;
+    const targetButton = e.currentTarget;
     targetButton.style.backgroundColor = 'rgb(251, 152, 152)';
     setTimeout(() => {
       targetButton.style.backgroundColor = 'rgb(239, 239, 239)';
@@ -50,7 +50,7 @@ class App extends Component {
       <Container>
         <Section title="Please, leave your feedback">
           <FeedbackOptions
-            options={{ good, neutral, bad }}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
