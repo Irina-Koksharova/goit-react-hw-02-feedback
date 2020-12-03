@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
 function FeedbackForm({ options, onLeaveFeedback }) {
   return (
     <>
-      <h1>Please, leave your feedback</h1>
       <ul className={s.buttonList}>
         <li className={s.buttonItem}>
           <button className={s.button} type="button" onClick={onLeaveFeedback}>
@@ -24,5 +24,14 @@ function FeedbackForm({ options, onLeaveFeedback }) {
     </>
   );
 }
+
+FeedbackForm.propTypes = {
+  options: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 
 export default FeedbackForm;
