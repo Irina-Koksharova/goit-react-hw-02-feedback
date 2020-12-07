@@ -14,10 +14,8 @@
   color: rgb(75, 73, 73);
   font-weight: 500;
   text-transform: capitalize;
-  border: 2px solid rgb(77, 74, 74);
-  border-radius: 15px;
+  border-radius: 5px;
   outline: none;
-  box-shadow: 0 0 3px rgba(147, 150, 147, 0.4);
   cursor: pointer;
 }
 

@@ -2,15 +2,20 @@ import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
 
 function Statistics({ good, neutral, bad, total, positivePercentage }) {
+  const props = [
+    { good },
+    { neutral },
+    { bad },
+    { total },
+    { positivePercentage },
+  ];
   return (
     <ul>
-      <li className={s.statisticsItem}>Good: {good}</li>
-      <li className={s.statisticsItem}>Neutral: {neutral}</li>
-      <li className={s.statisticsItem}>Bad: {bad}</li>
-      <li className={s.statisticsItem}>Total: {total}</li>
-      <li className={s.statisticsItem}>
-        Positive feedback: {positivePercentage}
-      </li>
+      {props.map(prop => (
+        <li className={s.statisticsItem} key={Object.keys(prop)}>
+          {Object.keys(prop)}: {Object.values(prop)}
+        </li>
+      ))}
     </ul>
   );
 }

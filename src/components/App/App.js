@@ -14,7 +14,7 @@ class App extends Component {
 
   handleIncrement = e => {
     const targetButton = e.currentTarget;
-    targetButton.style.backgroundColor = 'rgb(251, 152, 152)';
+    targetButton.style.backgroundColor = 'rgb(126, 179, 247)';
     setTimeout(() => {
       targetButton.style.backgroundColor = 'rgb(239, 239, 239)';
     }, 100);
