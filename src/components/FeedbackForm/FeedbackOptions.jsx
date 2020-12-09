@@ -6,7 +6,12 @@ function FeedbackForm({ options, onLeaveFeedback }) {
     <ul className={s.buttonList}>
       {options.map(option => (
         <li key={option} className={s.buttonItem}>
-          <button className={s.button} type="button" onClick={onLeaveFeedback}>
+          <button
+            className={s.button}
+            type="button"
+            name={option}
+            onClick={onLeaveFeedback}
+          >
             {option}
           </button>
         </li>

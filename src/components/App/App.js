@@ -20,13 +20,9 @@ class App extends Component {
     }, 100);
 
     this.setState(prevState => {
-      for (const key in this.state) {
-        if (key === targetButton.textContent.toLowerCase()) {
-          return {
-            [key]: prevState[key] + 1,
-          };
-        }
-      }
+      return {
+        [`${targetButton.name}`]: prevState[`${targetButton.name}`] + 1,
+      };
     });
   };
 
